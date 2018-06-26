@@ -38,4 +38,9 @@ killares
 
 # Game directory
 # -----------------------------
-/game/
+/game/config
+/game/logs
+/game/scripts
+/game/styles
+/game/uploads
+
