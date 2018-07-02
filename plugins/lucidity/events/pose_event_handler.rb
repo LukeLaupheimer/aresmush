@@ -6,7 +6,7 @@ module AresMUSH
 
         char = event.enactor
         room = char.room
-        uwc = event.pose.scan(/\w+/).uniq.count
+        uwc = event.pose.unique_word_count
 
         online_chars = Global.client_monitor.logged_in.map { |client, char| char }
         
