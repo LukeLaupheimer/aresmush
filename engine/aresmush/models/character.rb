@@ -19,6 +19,8 @@ module AresMUSH
     reference :room, "AresMUSH::Room"
     reference :handle, "AresMUSH::Handle"
     
+    attribute :lucidity, :type => DataType::Integer, :default => 0
+
     set :roles, "AresMUSH::Role"
     
     before_save :save_upcase
