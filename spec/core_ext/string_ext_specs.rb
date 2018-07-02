@@ -137,5 +137,28 @@ module AresMUSH
       end
     end
     
+    describe :words do
+      let(:sample_str) { "We're all test subjects" }
+
+      it "should pull out each word into an array" do
+        expect(sample_str.words).to eq ["We're", "all", "test", "subjects"]
+      end
+    end
+
+    describe :unique_words do
+      let(:repetitive_str) { "This is a good thing but this is also a bad thing" }
+
+      it "should only return words which are not repeated" do
+        expect(repetitive_str.unique_words).to eq ["This", "is", "a", "good", "thing", "but", "this", "also", "bad"]
+      end
+    end
+
+    describe :unique_word_count do
+      let(:repetitive_str) { "This is a good thing but this is also a bad thing" }
+
+      it "should return the number of unique words" do
+        expect(repetitive_str.unique_word_count).to eq 9
+      end
+    end
   end
 end

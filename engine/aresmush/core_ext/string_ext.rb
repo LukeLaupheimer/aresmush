@@ -64,6 +64,17 @@ class String
     raise ArgumentError.new("invalid value for Boolean: \"#{self}\"")
   end
   
+  def words
+    self.scan(/[\w']+/)
+  end
+
+  def unique_words
+    words.uniq
+  end
+
+  def unique_word_count
+    unique_words.count
+  end
 end
 
 class Object
