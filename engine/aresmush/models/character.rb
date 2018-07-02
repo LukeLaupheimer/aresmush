@@ -138,4 +138,15 @@ module AresMUSH
       (0...8).map { (33 + rand(94)).chr }.join
     end 
   end
+
+  def award(amount)
+    self.lucidity += award
+    self.save
+
+    client.emit "%xnYour %x4Lucidity%xn has increased by %xy#{award}%xn. It is now #{char.lucidity}" unless client.nil?
+  end
+
+  def client
+    @client ||= Global.client_monitor.find_client(self)
+  end
 end

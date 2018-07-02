@@ -12,14 +12,10 @@ module AresMUSH
         
         player_count = room.characters.select { |char| online_chars.include?(char) }.count - 1
 
-        award = uwc * player_count
+        bounty = uwc * player_count
+
+        char.award(amount)
        
-        enactor_client = Global.client_monitor.find_client(char)
-
-        char.lucidity += award
-        char.save
-
-        enactor_client.emit("%xnYour %x4Lucidity%xn has increased by %xy#{award}%xn. It is now #{char.lucidity}")
       end
     end
   end
