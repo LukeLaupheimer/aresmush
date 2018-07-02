@@ -140,6 +140,7 @@ module AresMUSH
   end
 
   def award(amount)
+    return if amount <= 0
     self.lucidity += award
     self.save
 
