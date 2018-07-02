@@ -25,6 +25,7 @@ module AresMUSH
     
     before_save :save_upcase
     
+
     def is_statue?
       self.is_statue
     end
@@ -68,6 +69,18 @@ module AresMUSH
     # INSTANCE METHODS
     # -----------------------------------
     
+    def award(bounty)
+      return if bounty <= 0
+      self.lucidity += bounty
+      self.save
+
+      client.emit "%xnYour %x4Lucidity%xn has increased by %xy#{bounty}%xn. It is now #{self.lucidity}" unless client.nil?
+    end
+
+    def client
+      @client ||= Global.client_monitor.find_client(self)
+    end
+    
     def compare_password(entered_password)
       hash = BCrypt::Password.new(self.password_hash)
       hash == entered_password
@@ -96,6 +109,7 @@ module AresMUSH
       
       if (name_or_role.class == Role)
         role = name_or_role
+    
       else
         role = Role.find_one_by_name(name_or_role)
       end
@@ -139,15 +153,4 @@ module AresMUSH
     end 
   end
 
-  def award(amount)
-    return if amount <= 0
-    self.lucidity += award
-    self.save
-
-    client.emit "%xnYour %x4Lucidity%xn has increased by %xy#{award}%xn. It is now #{char.lucidity}" unless client.nil?
-  end
-
-  def client
-    @client ||= Global.client_monitor.find_client(self)
-  end
 end
