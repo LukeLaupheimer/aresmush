@@ -147,7 +147,6 @@ module AresMUSH
     end
     
     def self.welcome_text
-      raise "DAFUQ: #{File.join(AresMUSH.game_path, "text", "website.txt")}"
       welcome_filename = File.join(AresMUSH.game_path, "text", "website.txt")
       text = File.read(welcome_filename, :encoding => "UTF-8")
       WebHelpers.format_markdown_for_html(text)
