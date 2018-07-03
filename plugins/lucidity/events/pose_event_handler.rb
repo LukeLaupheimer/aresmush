@@ -14,7 +14,7 @@ module AresMUSH
 
         multiplier = scene.watchers.count + scene.participants.count + scene.likers.count
 
-        bounty = uwc * multiplier
+        bounty = uwc * multiplier * 10
         char.award(bounty)
        
       end
