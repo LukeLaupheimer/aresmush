@@ -20,6 +20,7 @@ module AresMUSH
     reference :handle, "AresMUSH::Handle"
     
     attribute :lucidity, :type => DataType::Integer, :default => 0
+    attribute :idle_bonus_timer, :type => DataType::Integer, :default => 60
 
     set :roles, "AresMUSH::Role"
     
