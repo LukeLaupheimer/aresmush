@@ -1,12 +1,14 @@
 module AresMUSH
   module Login
-    class ConnectionEstablishedEventHandler    
+    class ConnectionEstablishedEventHandler
+      CONNECT_FILES = Dir["game/text/**/connect*.txt"]
+
       def on_event(event)
         client = event.client
         
         # Connect screen ansi
-        filename = File.join(AresMUSH.game_path, 'text', 'connect.txt')        
-        
+        filename = CONNECT_FILES.sample
+      
         if (File.exist?(filename))
           client.emit File.read(filename, :encoding => "UTF-8")
         else
