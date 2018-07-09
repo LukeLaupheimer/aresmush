@@ -9,23 +9,23 @@ module AresMUSH
       self.lucidity += bounty
       self.save
 
-      client.emit "%xnYour %x4Lucidity%xn has increased by %xy#{bounty}%xn. It is now #{self.lucidity}" unless client.nil?
+      client.emit t('lucidity.award', :bounty => bounty, :current => self.lucidity) unless client.nil?
     end
 
     def expend(payment)
       Global.logger.info("#{name} is trying to spend #{payment} Lucidity...")
       if self.lucidity < payment
-        client.emit "%xnYou must have %xy#{payment} %x4Lucidity%xn but you only have %xn#{self.lucidity}"
+        client.emit t('lucidity.not_enough', :required => payment, :current => self.lucidity)
         return
       end
 
       begin
         yield
-        client.emit "%xnYou spent %xy#{payment} %x4Lucidity."
+        client.emit t('lucidity.you_spent', :payment => payment)
         self.lucidity -= payment
         self.save
       rescue => e
-        client.emit "%xnSomething went wrong"
+        client.emit t('lucidity.something_went_wrong')
         Global.logger.info("#{self.name} could not expend resources because #{e.message} \n\n#{e.backtrace.join("\n")}")
       end
     end
