@@ -21,7 +21,7 @@ module AresMUSH
 
       begin
         yield
-        client.emit t('lucidity.you_spent', :payment => payment)
+        client.emit t('lucidity.you_spent', :payment => payment) if payment > 0
         self.lucidity -= payment
         self.save
       rescue => e
