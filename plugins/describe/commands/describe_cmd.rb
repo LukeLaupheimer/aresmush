@@ -24,8 +24,11 @@ module AresMUSH
             return
           end
           
-          model.update(description: self.description)
-          client.emit_success(t('describe.desc_set', :name => model.name))
+          enactor.expend(model.describe_cost(enactor)) do
+            model.update(description: self.description)
+
+            client.emit_success(t('describe.desc_set', :name => model.name))
+          end
         end
       end
     end
