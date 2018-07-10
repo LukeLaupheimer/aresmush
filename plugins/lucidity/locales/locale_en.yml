@@ -1,6 +1,6 @@
 en:
     lucidity:
-        award: "%xnYour %x4Lucidity%xn has increased by %xy%{bounty}%xn. It is now %x4%{current}%xn."
+        award: "%xnYour %x4Lucidity%xn has increased by %xy%{bounty}%xn. It's now at %xy%{current}%xn."
         not_enough: "%xnYour %x4Lucidity %xnmust be %xy%{required} %xnbut it is only %xn%{current}%xn."
         you_spent: "%xnYou spent %xy%{payment}%xn."
         something_went_wrong: "%xnSomething went wrong."
