@@ -15,6 +15,8 @@ module AresMUSH
         return PoseEventHandler
       when "CronEvent"
         return CronEventHandler
+      when "RoleChangedEvent"
+        return RoleChangedEventHandler
       end
       nil
     end    

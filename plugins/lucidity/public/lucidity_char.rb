@@ -1,5 +1,7 @@
 module AresMUSH
   class Character
+    attribute :initiated, :type => DataType::Boolean, :default => false
+
     def describe_cost(character)
       Global.read_config("lucidity", "costs", "describe_self") if self.owned_by?(character)
     end
