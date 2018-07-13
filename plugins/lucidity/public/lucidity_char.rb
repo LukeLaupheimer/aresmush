@@ -1,7 +1,7 @@
 module AresMUSH
   class Character
     def describe_cost(character)
-      0
+      Global.read_config("lucidity", "costs", "describe_self") if self.owned_by?(character)
     end
 
     def award(bounty)
