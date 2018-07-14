@@ -16,6 +16,13 @@ module AresMUSH
         char.initiated = true
 
         char.save
+
+        client = char.client
+
+        return if client.nil?
+
+        client.emit t('lucidity.start_room.approval_message')
+        Rooms.move_to(client, char, room)
       end
     end
   end
