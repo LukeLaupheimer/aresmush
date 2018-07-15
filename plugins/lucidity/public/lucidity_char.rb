@@ -3,7 +3,7 @@ module AresMUSH
     attribute :initiated, :type => DataType::Boolean, :default => false
 
     def describe_cost(character)
-      Global.read_config("lucidity", "costs", "describe_self") if self.owned_by?(character)
+      Global.read_config("lucidity", "costs", "describe_self")
     end
 
     def award(bounty)
