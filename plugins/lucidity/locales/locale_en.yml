@@ -8,3 +8,5 @@ en:
         name: "An unending void"
         description: "Before the beginning there was nothing. No night or day, no animals, no people, no ideas, nothing."
         approval_message: "Congratulations! You have been approved. Your dream begins..."
+        area_name: "Dreamscape of %{character}"
+        area_description: "An entire world from the mind of %{character}."
