@@ -22,22 +22,30 @@ module AresMUSH
       end
       
       def check_can_build
-        return t('dispatcher.not_allowed') if !Rooms.can_build?(enactor)
+        return t('dispatcher.not_allowed') if !Rooms.can_build?(enactor) && enactor.room.room_owner != enactor.id
         return nil
       end
       
       def handle
-        room = AresMUSH::Room.create(:name => name, :area => enactor.room.area)
-        client.emit_success(t('rooms.room_created', :name => name))
-        
-        if (!self.exit.empty?)
-          Rooms.open_exit(self.exit, enactor_room, room)
+        cost = Rooms.can_build?(enactor) ? 0 : enactor.room_home.area.rooms.count * Global.read_config("lucidity", "costs", "build_room_base")
+
+        enactor.expend(cost) do
+          room = AresMUSH::Room.create(
+            :name       => name,
+            :area       => enactor.room.area,
+            :room_owner => enactor.id)
+
+          client.emit_success(t('rooms.room_created', :name => name))
+          
+          if (!self.exit.empty?)
+            Rooms.open_exit(self.exit, enactor_room, room)
+          end
+          if (!self.return_exit.empty?)
+            Rooms.open_exit(self.return_exit, room, enactor_room)
+          end
+          
+          Rooms.move_to(client, enactor, room)          
         end
-        if (!self.return_exit.empty?)
-          Rooms.open_exit(self.return_exit, room, enactor_room)
-        end
-        
-        Rooms.move_to(client, enactor, room)
       end
     end
   end
