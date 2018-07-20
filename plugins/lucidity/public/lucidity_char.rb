@@ -23,9 +23,9 @@ module AresMUSH
 
       begin
         yield
-        client.emit t('lucidity.you_spent', :payment => payment) if payment > 0
         self.lucidity -= payment
         self.save
+        client.emit t('lucidity.you_spent', :payment => payment, :lucidity => self.lucidity) if payment > 0
       rescue => e
         client.emit t('lucidity.something_went_wrong')
         Global.logger.info("#{self.name} could not expend resources because #{e.message} \n\n#{e.backtrace.join("\n")}")
