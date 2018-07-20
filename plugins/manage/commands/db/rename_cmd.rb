@@ -37,9 +37,13 @@ module AresMUSH
             end
           end         
         
-          old_name = model.name
-          model.update(name: self.name)
-          client.emit_success t('manage.object_renamed', :type => model.class.name.rest("::"), :old_name => old_name, :new_name => self.name)
+          cost = !AresMUSH::Manage.can_manage_rooms?(enactor) && AresMUSH::Manage.is_owner_of_room?(enactor, model) ? Global.read_config("lucidity", "costs", "describe_own_room") : 0
+
+          enactor.expend(cost) do
+            old_name = model.name
+            model.update(name: self.name)
+            client.emit_success t('manage.object_renamed', :type => model.class.name.rest("::"), :old_name => old_name, :new_name => self.name)
+          end
         end
       end
       

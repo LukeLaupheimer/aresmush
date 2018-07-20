@@ -17,9 +17,6 @@ module AresMUSH
           :room_owner  => char.id,
           :area        => area)
 
-        area.rooms << room
-        area.save
-
         char.room_home = room
         char.initiated = true
 
@@ -27,8 +24,10 @@ module AresMUSH
 
         client = char.client
 
+        Global.logger.info("Grabbing client")
         return if client.nil?
 
+        Global.logger.info("Got it and it's there")
         client.emit t('lucidity.start_room.approval_message')
         Rooms.move_to(client, char, room)
       end

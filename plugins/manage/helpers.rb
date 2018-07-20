@@ -15,10 +15,20 @@ module AresMUSH
       actor.has_permission?("build") || self.can_manage_game?(actor)
     end
     
+    def self.is_owner_of_room?(actor, model)
+      if model.class == Room
+        model.room_owner == actor.id
+      elsif model.class == Exit
+        model.source.room_owner == actor.id && model.dest.room_owner == actor.id
+      else
+        false
+      end
+    end
+
     def self.can_manage_object?(actor, model)
       return false if !actor
       if (model.class == Room || model.class == Exit)
-        self.can_manage_rooms?(actor)
+        self.can_manage_rooms?(actor) || self.is_owner_of_room?(actor, model)
       else
         self.can_manage_game?(actor)
       end

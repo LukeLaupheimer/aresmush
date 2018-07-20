@@ -10,8 +10,13 @@ module AresMUSH
       chars = Character.find_any_by_name(name_or_id)
       exits = Exit.find_any_by_name(name_or_id)
       rooms = Room.find_any_by_name(name_or_id)
-      
-      contents = [chars, exits, rooms].flatten(1).select { |c| c }   
+      areas = Area.find_any_by_name(name_or_id)
+
+      areas.each do |a|
+        a.delete
+      end
+
+      contents = [chars, exits, rooms, areas].flatten(1).select { |c| c }   
             
       SingleResultSelector.select(contents)
     end
