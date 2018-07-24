@@ -1,9 +1,20 @@
 module AresMUSH
   class Character
     attribute :initiated, :type => DataType::Boolean, :default => false
+    attribute :sympathy_tokens, :type => DataType::Integer, :default => Global.read_config("lucidity", "starting_tokens", "sympathy")
+    collection :senders, "AresMUSH::Sympathy", :sender
+    collection :receivers, "AresMUSH::Sympathy", :receiver
 
     def describe_cost(character)
       Global.read_config("lucidity", "costs", "describe_self")
+    end
+
+    def sympathizes_with?(char)
+      sympathies.include?(char.name_upcase)
+    end
+
+    def sympathies
+      (senders.to_a + receivers.to_a).collect { |s| s.sender.name_upcase == self.name_upcase ? s.receiver.name_upcase : s.sender.name_upcase}.uniq
     end
 
     def award(bounty)

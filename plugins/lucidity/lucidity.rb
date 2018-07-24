@@ -19,6 +19,10 @@ module AresMUSH
         return RoleChangedEventHandler
       end
       nil
-    end    
+    end
+
+    def self.get_cmd_handler(client, cmd, enactor)
+      return SympathyCreateCmd
+    end
   end
 end

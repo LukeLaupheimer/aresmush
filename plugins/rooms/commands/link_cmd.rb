@@ -17,6 +17,7 @@ module AresMUSH
       end
       
       def check_can_build
+        Global.logger.info(caller.join("\n"))
         return t('dispatcher.not_allowed') if !Rooms.can_build?(enactor)
         return nil
       end

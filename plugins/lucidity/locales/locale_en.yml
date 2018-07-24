@@ -4,6 +4,8 @@ en:
       not_enough: "%xnYour %x4Lucidity %xnmust be %xy%{required} %xnbut it is only %xn%{current}%xn."
       you_spent: "%xnYou spent %xy%{payment} %x4Lucidity%xn, reducing your reserves to %xy%{lucidity}%xn."
       something_went_wrong: "%xnSomething went wrong."
+      already_sympathetic: "You already hold a sympathetic connection to %{name}."
+      sympathetic_established: "You have established a sympathetic connection to %{name}."
       start_room:
         name: "An unending void"
         description: "Before the beginning there was nothing. No night or day, no animals, no people, no ideas, nothing."
