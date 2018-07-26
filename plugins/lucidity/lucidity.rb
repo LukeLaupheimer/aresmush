@@ -22,7 +22,14 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
-      return SympathyCreateCmd
+      case cmd.root
+      when "sympathy"
+        case cmd.switch
+        when "establish"
+          return SympathyCreateCmd
+        end
+      end
+      nil
     end
   end
 end
