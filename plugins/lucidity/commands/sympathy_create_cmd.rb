@@ -41,7 +41,7 @@ module AresMUSH
       
       def handle
         send("handle_#{source}")
-        client.emit_success t('lucidity.sympathetic_established', :name => char.name)
+        client.emit_success t('lucidity.sympathetic_established', :name => char.name) if sympathy.present?
       end
 
       private
