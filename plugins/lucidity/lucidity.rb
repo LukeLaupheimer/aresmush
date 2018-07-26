@@ -27,6 +27,8 @@ module AresMUSH
         case cmd.switch
         when "establish"
           return SympathyCreateCmd
+        when "sever"
+          return SympathyDestroyCmd
         end
       end
       nil

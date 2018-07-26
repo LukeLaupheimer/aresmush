@@ -17,6 +17,10 @@ module AresMUSH
       (senders.to_a + receivers.to_a).collect { |s| s.sender.name_upcase == self.name_upcase ? s.receiver.name_upcase : s.sender.name_upcase}.uniq
     end
 
+    def sympathetic_connection_to(char)
+      (senders.to_a + receivers.to_a).select { |s| s.sender == char || s.receiver == char }.first
+    end
+
     def award(bounty)
       return if bounty <= 0
       self.lucidity += bounty

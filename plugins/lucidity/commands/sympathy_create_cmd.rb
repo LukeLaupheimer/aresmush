@@ -48,7 +48,10 @@ module AresMUSH
 
       def handle_token
         char.sympathy_tokens -= 1
-        @sympathy = Sympathy.create(:sender => enactor, :receiver => char)
+        @sympathy = Sympathy.create(
+          :sender => enactor,
+          :receiver => char,
+          :severance_cost => required_lucidity)
         char.save
       end
 
