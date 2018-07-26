@@ -57,7 +57,10 @@ module AresMUSH
 
       def handle_lucidity
         enactor.expend(required_lucidity) do
-          @sympathy = Sympathy.create(:sender => enactor, :receiver => char)
+          @sympathy = Sympathy.create(
+            :sender => enactor,
+            :receiver => char,
+            :severance_cost => required_lucidity)
         end
       end
     end
