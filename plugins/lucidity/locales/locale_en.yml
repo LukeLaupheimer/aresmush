@@ -7,6 +7,7 @@ en:
       already_sympathetic: "You already hold a sympathetic connection to %{name}."
       not_sympathetic: "You hold no sympathetic connection to %{name}."
       sympathetic_established: "You have established a sympathetic connection to %{name}."
+      sympathetic_imposed: "%{name} just established a sympathetic connection to you."
       you_severed_sympathy: "You have severed your sympathetic connection to %{name}."
       your_sympathy_severed: "%{name} has severed the sympathetic connection between you."
       start_room:
