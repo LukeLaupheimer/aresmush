@@ -35,6 +35,11 @@ module AresMUSH
         when "strengthen"
           return BarrierStrengthenCmd
         end
+      when "bridge"
+        case cmd.switch
+        when "erect"
+          return BridgeErectCmd
+        end
       end
       nil
     end
