@@ -37,4 +37,9 @@
 <% end %>
 
 <% end %>
+
+<% if room.room_type == "IC" %>
+<%= "%xg#{t('lucidity.barrier_title')}%xn" -%>
+<%= room.barrier %>
+<% end %>
 <%= footer %>

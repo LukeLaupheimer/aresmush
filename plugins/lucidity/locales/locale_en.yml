@@ -12,6 +12,7 @@ en:
       your_sympathy_severed: "%{name} has severed the sympathetic connection between you."
       does_not_belong_to_you: "This room does not belong to you."
       barrier_strengthened: "The barrier here has strengthened to %{level}."
+      barrier_title: "Barrier Strength:"
       start_room:
         name: "An unending void"
         description: "Before the beginning there was nothing. No night or day, no animals, no people, no ideas, nothing."
