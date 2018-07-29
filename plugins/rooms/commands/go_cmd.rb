@@ -15,7 +15,8 @@ module AresMUSH
       
       def handle
         exit = enactor_room.get_exit(self.destination)
-        
+        Global.logger.info(exit.inspect)
+
         if (!exit || !exit.dest)
           client.emit_failure(t("rooms.cant_go_that_way"))
           return
@@ -25,8 +26,10 @@ module AresMUSH
           client.emit_failure t('rooms.cant_go_through_locked_exit')
           return
         end
-        
-       Rooms.move_to(client, enactor, exit.dest, exit.name)
+
+        enactor.expend(exit.toll) do
+          Rooms.move_to(client, enactor, exit.dest, exit.name)
+        end
       end
     end
   end
