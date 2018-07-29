@@ -30,6 +30,11 @@ module AresMUSH
         when "sever"
           return SympathyDestroyCmd
         end
+      when "barrier"
+        case cmd.switch
+        when "strengthen"
+          return BarrierStrengthenCmd
+        end
       end
       nil
     end
