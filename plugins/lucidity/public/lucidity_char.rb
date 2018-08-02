@@ -30,6 +30,7 @@ module AresMUSH
     end
 
     def expend(payment)
+      payment = payment.to_i
       Global.logger.info("#{name} is trying to spend #{payment} Lucidity...")
       if self.lucidity < payment
         client.emit t('lucidity.not_enough', :required => payment, :current => self.lucidity)
