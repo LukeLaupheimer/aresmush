@@ -40,6 +40,8 @@ module AresMUSH
         when "erect"
           return BridgeErectCmd
         end
+      when "lucidity"
+        return LucidityDisplayCmd
       end
       nil
     end
