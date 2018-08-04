@@ -1,32 +1,33 @@
 By playing here, you must adhere to these terms of service:
+
     [1;34mYou Are Responsible For What You Transmit
 
-    [0;37mPlease don't transmit anything obnoxious, because if it gets bad
-    [0;37menough, banning you might become necessary. While we are in favor of a
-    [3;37mlaissez faire[0;37m culture, there are limits. Try not to push them too far.
+    [0mPlease don't transmit anything obnoxious, because if it gets bad
+    [0menough, banning you might become necessary. While we are in favor of a
+    [0mlaissez faire[0m culture, there are limits. Try not to push them too far.
 
-    [0;37mDefinitely don't transmit anything that is illegal under United States
-    [0;37mLaw. We won't hesitate to cooperate with authorities if you end up
-    [0;37musing this service for anything illegal under United States Law.
+    [0mDefinitely don't transmit anything that is illegal under United States
+    [0mLaw. We won't hesitate to cooperate with authorities if you end up
+    [0musing this service for anything illegal under United States Law.
 
     [1;34mWe Are Responsible For Nothing
 
-    [0;37mBy going farther, you agree that anything you are exposed to here is
-    [0;37myour own responsibility. We are not here to babysit you, so that
-    [0;37maforementioned [3;37mlaissez faire[0;37m culture might mean you read something that
-    [0;37moffends you. It might even offend us. We generally don't regard this
-    [0;37mas a very good reason to ban or consequence people.
+    [0mBy going farther, you agree that anything you are exposed to here is
+    [0myour own responsibility. We are not here to babysit you, so that
+    [0maforementioned [0mlaissez faire[0m culture might mean you read something that
+    [0moffends you. It might even offend us. We generally don't regard this
+    [0mas a very good reason to ban or consequence people.
 
     [1;34mBe Creative, Have Fun, and Be Fun
 
-    [0;37mIn spite of how harsh the first two things might sound, we would much
-    [0;37mprefer to have creative but pain in the ass players than
-    [0;37measily-managed but boring players. Things only seem ridiculous before
-    [0;37mthey've been done before. Do something neat and even forbidden.
-    [0;37mPlay along with other users, but don't be a cog or a pushover. By
-    [0;37mgoing further, you agree to create something clever, to make your
-    [0;37mpresence known, to, simply put, pull some shit. In character, of
-    [0;37mcourse. Try to keep out of character drama to a minimum.
+    [0mIn spite of how harsh the first two things might sound, we would much
+    [0mprefer to have creative but pain in the ass players than
+    [0measily-managed but boring players. Things only seem ridiculous before
+    [0mthey've been done before. Do something neat and even forbidden.
+    [0mPlay along with other users, but don't be a cog or a pushover. By
+    [0mgoing further, you agree to create something clever, to make your
+    [0mpresence known, to, simply put, pull some shit. In character, of
+    [0mcourse. Try to keep out of character drama to a minimum.
 
 
 Please customize your terms of service.
