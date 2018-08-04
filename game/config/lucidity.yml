@@ -12,5 +12,6 @@ lucidity:
     barrier_increase: 1000
     erect_bridge: 2500
     bridge_toll: 25
+    details_home: 500
   starting_tokens:
     sympathy: 3

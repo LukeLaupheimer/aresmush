@@ -17,19 +17,28 @@ module AresMUSH
         [ self.target, self.desc, self.name ]
       end
       
+      def required_lucidity(model)
+
+        if model.is_a?(Room) && model.room_owner == enactor.id
+          return Global.read_config('lucidity', 'costs', 'details_home')
+        else
+          0
+        end
+      end
+
       def handle
         VisibleTargetFinder.with_something_visible(self.target, client, enactor) do |model|
-                    
           if (!Describe.can_describe?(enactor, model))
             client.emit_failure(t('dispatcher.not_allowed'))
             return
           end
-          
-          details = model.details
-          details[self.name] = self.desc
-          model.update(details: details)
+          enactor.expend(required_lucidity(model)) do
+            details = model.details
+            details[self.name] = self.desc
+            model.update(details: details)
 
-          client.emit_success t('describe.detail_set')
+            client.emit_success t('describe.detail_set')
+          end
         end
       end
     end
