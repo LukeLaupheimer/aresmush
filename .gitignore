@@ -44,3 +44,6 @@ killares
 /game/styles
 /game/uploads
 
+# Important Exceptions
+# #----------------------------
+!/game/config/lucidity.yml

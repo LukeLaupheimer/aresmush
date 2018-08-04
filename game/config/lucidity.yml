@@ -1,0 +1,16 @@
+---
+lucidity:
+  awards:
+    bonus_timer: 60
+    timer_award: 150
+    pose_multiplier: 10
+  costs:
+    describe_own_room: 500
+    rename_own_room: 500
+    build_room_base: 1500
+    sympathetic_connection: 5000
+    barrier_increase: 1000
+    erect_bridge: 2500
+    bridge_toll: 25
+  starting_tokens:
+    sympathy: 3
