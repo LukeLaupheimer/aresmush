@@ -17,6 +17,10 @@ module AresMUSH
         Global.read_config('lucidity', 'awards', 'timer_award')
       end
 
+      def my_lucidity
+        enactor.lucidity
+      end
+
       def multiplier_texts
         {
           :build_room_base => "number of rooms you have",
