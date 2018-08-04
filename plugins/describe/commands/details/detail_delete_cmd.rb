@@ -11,6 +11,14 @@ module AresMUSH
         self.name = titlecase_arg(args.arg2)
       end
       
+      def required_lucidity(model)
+        if model.is_a?(Room) && model.room_owner == enactor.id
+          return Global.read_config('lucidity', 'costs', 'details_home')
+        else
+          0
+        end
+      end
+      
       def required_args
         [ self.target, self.name ]
       end
@@ -28,10 +36,12 @@ module AresMUSH
             return
           end
           
-          details = model.details
-          details.delete self.name
-          model.update(details: details)
-          client.emit_success t('describe.detail_deleted')
+          enactor.expend(required_lucidity(model)) do
+            details = model.details
+            details.delete self.name
+            model.update(details: details)
+            client.emit_success t('describe.detail_deleted')
+          end
         end
       end
     end

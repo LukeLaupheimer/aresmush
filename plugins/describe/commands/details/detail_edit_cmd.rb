@@ -10,6 +10,14 @@ module AresMUSH
         self.target = trim_arg(args.arg1)
         self.name = titlecase_arg(args.arg2)
       end
+
+      def required_lucidity(model)
+        if model.is_a?(Room) && model.room_owner == enactor.id
+          return Global.read_config('lucidity', 'costs', 'details_home')
+        else
+          0
+        end
+      end
       
       def required_args
         [ self.target, self.name ]
@@ -23,13 +31,15 @@ module AresMUSH
             client.emit_failure t('describe.no_such_detail', :name => self.name)
             return
           end
-          
+
           if (!Describe.can_describe?(enactor, model))
             client.emit_failure(t('dispatcher.not_allowed'))
             return
           end
           
-          Utils.grab client, enactor, "detail/set #{self.target}/#{self.name}=#{detail}"
+          enactor.expend(required_lucidity(model)) do
+            Utils.grab client, enactor, "detail/set #{self.target}/#{self.name}=#{detail}" 
+          end
         end
       end
       
