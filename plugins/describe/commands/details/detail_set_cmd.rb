@@ -21,8 +21,8 @@ module AresMUSH
 
         if model.is_a?(Room) && model.room_owner == enactor.id
           return Global.read_config('lucidity', 'costs', 'details_home')
-        else
-          0
+        elsif mode.is_a?(Room)
+          return Global.read_config('lucidity', 'costs', 'details_other') * model.barrier
         end
       end
 
