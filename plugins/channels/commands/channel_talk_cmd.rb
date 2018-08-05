@@ -68,7 +68,11 @@ module AresMUSH
             return
           end
         end
-          
+        
+        if channel.anonymous
+          enactor.award(msg.scan(/[\w']+/).count)
+        end
+
         title = options.title
         ooc_name = enactor.ooc_name
         name = !title ? ooc_name : "#{title} #{ooc_name}"
