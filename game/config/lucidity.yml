@@ -6,6 +6,7 @@ lucidity:
     pose_multiplier: 10
   costs:
     describe_own_room: 500
+    describe_other_room: 1500
     rename_own_room: 500
     build_room_base: 1500
     sympathetic_connection: 5000

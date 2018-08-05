@@ -27,7 +27,8 @@ module AresMUSH
           :sympathetic_connection => "number of sympathetic connections you already have",
           :barrier_increase => "number of barriers room already has",
           :erect_bridge => "the total barriers of both rooms",
-          :bridge_toll => "the barrier of the room being entered"
+          :bridge_toll => "the barrier of the room being entered",
+          :describe_other_room => "the barrier of the room being described"
         }
       end
     end
