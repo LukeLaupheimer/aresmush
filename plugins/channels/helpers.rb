@@ -74,7 +74,8 @@ module AresMUSH
     end
     
     def self.pose_to_channel(channel, name, msg)
-      formatted_msg = PoseFormatter.format(name, msg)
+      visible_name = channel.anonymous ? "Someone" : name
+      formatted_msg = PoseFormatter.format(visible_name, msg)
       Channels.emit_to_channel channel, formatted_msg
       return formatted_msg
     end
