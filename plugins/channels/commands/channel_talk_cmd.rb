@@ -70,7 +70,8 @@ module AresMUSH
         end
         
         if channel.anonymous
-          enactor.award(msg.scan(/[\w']+/).count)
+          enactor.award(msg.scan(/[\w']+/).count * Global.read_config('lucidity', 'awards', 'anonymous_chat'))
+          Global.logger.info("#{enactor.name} said anonymously: #{msg}")
         end
 
         title = options.title
