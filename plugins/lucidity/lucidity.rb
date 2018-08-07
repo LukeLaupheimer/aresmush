@@ -41,7 +41,12 @@ module AresMUSH
           return BridgeErectCmd
         end
       when "lucidity"
-        return LucidityDisplayCmd
+        case cmd.switch
+        when "gift"
+          return LucidityGiftCmd
+        else
+          return LucidityDisplayCmd
+        end
       end
       nil
     end

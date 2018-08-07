@@ -22,6 +22,7 @@ module AresMUSH
     end
 
     def award(bounty)
+      Global.logger.info("Awarding #{bounty} to #{name}.")
       return if bounty <= 0
       self.lucidity += bounty
       self.save
