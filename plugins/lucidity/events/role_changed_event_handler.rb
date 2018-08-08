@@ -20,9 +20,13 @@ module AresMUSH
         char.room_home = room
         char.initiated = true
 
+        char.award(Global.read_config("lucidity", "awards", "starting"))
+
         char.save
 
         client = char.client
+
+        Channels.join_channel("Collective Unconscious", client, char, "col")
 
         Global.logger.info("Grabbing client")
         return if client.nil?
