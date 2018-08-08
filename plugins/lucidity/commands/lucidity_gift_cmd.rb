@@ -22,7 +22,7 @@ module AresMUSH
       def handle
         amount = amount.to_i
         enactor.expend(amount) do
-          char.award(amount)
+          char.award(amount,t('lucidity.award_reasons.gifted', :name => enactor.name))
         end
       end
     end
