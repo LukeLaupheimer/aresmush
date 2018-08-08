@@ -20,9 +20,10 @@ module AresMUSH
       end
 
       def handle
-        amount = amount.to_i
-        enactor.expend(amount) do
-          char.award(amount,t('lucidity.award_reasons.gifted', :name => enactor.name))
+        Global.logger.info("Amount: #{amount.to_i}")
+        price = amount.to_i
+        enactor.expend(price) do
+          char.award(price,t('lucidity.award_reasons.gift', :name => enactor.name))
         end
       end
     end
