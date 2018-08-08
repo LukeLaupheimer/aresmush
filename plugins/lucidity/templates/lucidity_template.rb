@@ -28,7 +28,7 @@ module AresMUSH
           :barrier_increase => "number of barriers room already has",
           :erect_bridge => "the total barriers of both rooms",
           :bridge_toll => "the barrier of the room being entered",
-          :describe_other_room => "the barrier of the room being described",
+          :describe_other_room => "(the barrier of the room being described + 1)",
           :details_other => "the barrier of the room being detailed"
         }
       end
