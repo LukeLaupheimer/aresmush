@@ -15,7 +15,7 @@ module AresMUSH
         multiplier = scene.watchers.count + scene.participants.count + scene.likers.count
 
         bounty = uwc * multiplier * Global.read_config("lucidity", "awards", "pose_multiplier")
-        char.award(bounty)
+        char.award(bounty, t('lucidity.award_reasons.pose'))
        
       end
     end
