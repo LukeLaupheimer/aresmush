@@ -9,7 +9,7 @@ module AresMUSH
 
           if char.idle_bonus_timer <= 0
             char.idle_bonus_timer = Global.read_config("lucidity", "awards", "bonus_timer")
-            char.award(Global.read_config("lucidity", "awards", "timer_award"))
+            char.award(Global.read_config("lucidity", "awards", "timer_award"), t('lucidity.award_reasons.idle'))
           end
 
           char.save

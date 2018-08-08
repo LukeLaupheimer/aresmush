@@ -26,3 +26,5 @@ en:
         area_description: "An entire world from the mind of %{character}."
       award_reasons:
         col: "contributing to the collective unconscious"
+        idle: "idling for an hour"
+
