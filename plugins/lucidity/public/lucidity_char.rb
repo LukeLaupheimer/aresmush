@@ -2,6 +2,7 @@ module AresMUSH
   class Character
     attribute :initiated, :type => DataType::Boolean, :default => false
     attribute :sympathy_tokens, :type => DataType::Integer, :default => Global.read_config("lucidity", "starting_tokens", "sympathy")
+    attribute :bridge_tokens, :type => DataType::Integer, :default => Global.read_config("lucidity", "starting_tokens", "bridge")
     collection :senders, "AresMUSH::Sympathy", :sender
     collection :receivers, "AresMUSH::Sympathy", :receiver
 
