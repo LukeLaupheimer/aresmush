@@ -4,7 +4,7 @@ lucidity:
     bonus_timer: 60
     timer_award: 150
     pose_multiplier: 10
-    anonymous_chat: 3
+    anonymous_chat: 10
     starting: 5000
   costs:
     describe_own_room: 500
