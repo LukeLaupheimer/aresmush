@@ -20,7 +20,7 @@ module AresMUSH
         char.room_home = room
         char.initiated = true
 
-        char.award(Global.read_config("lucidity", "awards", "starting"))
+        char.award(Global.read_config("lucidity", "awards", "starting"), t('lucidity.award_reasons.starting'))
 
         char.save
 
