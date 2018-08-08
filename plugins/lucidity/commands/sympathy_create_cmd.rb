@@ -50,6 +50,7 @@ module AresMUSH
       private
 
       def handle_token
+        Global.logger.info("#{enactor.name} using a token to sympathize with #{char.name}. Tokens left before this: #{char.sympathy_tokens}")
         char.sympathy_tokens -= 1
         @sympathy = Sympathy.create(
           :sender => enactor,
