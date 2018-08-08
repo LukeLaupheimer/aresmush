@@ -1,5 +1,6 @@
 en:
     lucidity:
+      award_with_reason: "%xnYour %x4Lucidity%xn has increased by %xy%{bounty}%xn, for %{reason}. It's now at %xy%{current}%xn."
       award: "%xnYour %x4Lucidity%xn has increased by %xy%{bounty}%xn. It's now at %xy%{current}%xn."
       not_enough: "%xnYour %x4Lucidity %xnmust be %xy%{required} %xnbut it is only %xn%{current}%xn."
       you_spent: "%xnYou spent %xy%{payment} %x4Lucidity%xn, reducing your reserves to %xy%{lucidity}%xn."
@@ -23,3 +24,5 @@ en:
         approval_message: "Congratulations! You have been approved. Your dream begins..."
         area_name: "Dreamscape of %{character}"
         area_description: "An entire world from the mind of %{character}."
+      award_reasons:
+        col: "contributing to the collective unconscious"

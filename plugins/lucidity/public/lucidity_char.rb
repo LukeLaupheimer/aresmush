@@ -21,13 +21,17 @@ module AresMUSH
       (senders.to_a + receivers.to_a).select { |s| s.sender == char || s.receiver == char }.first
     end
 
-    def award(bounty)
+    def award(bounty, reason=nil)
       Global.logger.info("Awarding #{bounty} to #{name}.")
       return if bounty <= 0
       self.lucidity += bounty
       self.save
 
-      client.emit t('lucidity.award', :bounty => bounty, :current => self.lucidity) unless client.nil?
+      if reason.nil?
+        client.emit t('lucidity.award', :bounty => bounty, :current => self.lucidity) unless client.nil?
+      else
+        client.emit t('lucidity.award_with_reason', :bounty => bounty, :current => self.lucidity, :reason => reason) unless client.nil?
+      end
     end
 
     def expend(payment)
