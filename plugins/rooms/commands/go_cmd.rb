@@ -28,6 +28,7 @@ module AresMUSH
         end
 
         enactor.expend(exit.toll) do
+          Character.find_one_by_name(exit.dest.room_owner).award(exit.toll)
           Rooms.move_to(client, enactor, exit.dest, exit.name)
         end
       end
