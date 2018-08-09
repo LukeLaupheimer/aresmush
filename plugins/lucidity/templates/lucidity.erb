@@ -4,12 +4,6 @@
 
 %xn Lucidity is how you get things done. It's how you build new rooms. It's how you describe and name those rooms. It's how you create sympathetic connections to people when you run out of your first three sympathy tokens. It's how you build bridges between people, and tamper with other people's dreamscapes. There are two main ways that are currently implemented to get more Lucidity:
 
-%xr ==> What Things Cost
-
-<%- costs.each do |name, val| %>
-  %xr*. %xn<%= name.humanize.titleize %>: <%= val %><%= "%xrx%xn#{multiplier_texts[name.to_sym]}" if multiplier_texts.has_key?(name.to_sym) %>
-<%- end %>
-
 %xr ==> How To Get More
 
 %xr*. %xwIdle. %xnWe want you to stay logged on! Even if you're just chatting OOC, that's better than disappearing. For every hour you're online, idling or otherwise, you get <%= idle_award %> Lucidity.
@@ -17,4 +11,14 @@
 
 %xr*. %xwActually Roleplaying. %xnYou get Lucidity based on a combination of how many people are in the scene, and how many words you wrote. While quantity doesn't translate directly into quality, more is better ceteris paribus, and it's something that can be calculated objectively.
 
+%xr ==> What Things Cost
 
+<%- costs.each do |name, val| %>
+  %xr*. %xn<%= name.humanize.titleize %>: <%= val %><%= "%xrx%xn#{multiplier_texts[name.to_sym]}" if multiplier_texts.has_key?(name.to_sym) %>
+<%- end %>
+
+%xr ==> Your Current Sympathies (And Their Severance Cost)
+
+<% sympathies.each do |s| %>
+  %xr*. %xn<%= left(s.name, 20) %> %xy<%= enactor.sympathetic_connection_to(s).severance_cost %>
+<% end %>

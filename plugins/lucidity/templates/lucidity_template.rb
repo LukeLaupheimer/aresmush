@@ -32,6 +32,12 @@ module AresMUSH
           :details_other => "the barrier of the room being detailed"
         }
       end
+
+      def sympathies
+        enactor.sympathies.collect do |s|
+          Character.find_one_by_name(s)
+        end
+      end
     end
   end
 end
