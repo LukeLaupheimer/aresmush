@@ -31,6 +31,7 @@ en:
        played_by: "Played By:"
        players_title: "Characters:"
        exits_title: "Exits:"
+       bridges_title: "Bridges:"
        no_way_out: "No way out!"
        
        scene_log_active: "+++ The scene log is active in this room. +++"
