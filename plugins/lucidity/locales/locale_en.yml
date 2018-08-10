@@ -18,6 +18,11 @@ en:
       barrier_title: "Barrier Strength:"
       bridge_erected: "A barrier has been erected between here and %{dest}."
       bridge_already_erected: "A bridge has already been erected to %{dest}."
+      illusion_already_present: "An illusion has yet to expire here"
+      illusion_imposed: "An illusion has been imposed here"
+      illusion_words_remaining_prefix: "Words Remaining:"
+      illusion_not_yours: "This illusion does not belong to you!"
+      illusion_evaporation_message_set: "The evaporation message has been set!"
       start_room:
         name: "An unending void"
         description: "Before the beginning there was nothing. No night or day, no animals, no people, no ideas, nothing."

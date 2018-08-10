@@ -47,6 +47,15 @@ module AresMUSH
         else
           return LucidityDisplayCmd
         end
+      when "illusion"
+        case cmd.switch
+        when "impose"
+          return IllusionImposeCmd
+        when "evaporation"
+          return IllusionEvaporateCmd
+        when "veto"
+          return IllusionVetoCmd
+        end
       end
       nil
     end

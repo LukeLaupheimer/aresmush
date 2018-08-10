@@ -19,16 +19,7 @@ module AresMUSH
         
         if room.illusion_present?
           room.illusion_words_remaining -= uwc
-
-          if room.illusion_words_remaining <= 0
-
-            room.emit "Okay.."
-            room.illusion_words_remaining = 0
-
-            room.emit room.illusion_evaporation_message
-          end
-
-          room.save
+          room.illusion_words_remaining = 0 if room.illusion_words_remaining < 0
         end
       end
     end

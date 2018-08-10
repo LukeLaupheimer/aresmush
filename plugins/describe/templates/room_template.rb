@@ -60,6 +60,10 @@ module AresMUSH
       def description
         Describe::RoomDescBuilder.build(@room)
       end
+
+      def illusion_words_remaining
+        @room.illusion_words_remaining
+      end
       
       def ooc_time
         OOCTime.local_short_timestr(@enactor, Time.now)

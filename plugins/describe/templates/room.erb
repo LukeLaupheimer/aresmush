@@ -3,6 +3,10 @@
 <%= ooc_time %> ~ <%= ic_time %>
 <%= divider %>
 <%= description %>
+
+<% if illusion_words_remaining > 0 %>
+%xg<%= t('lucidity.illusion_words_remaining_prefix') %> %xn<%= illusion_words_remaining %>
+<% end %>
 <% if details %>
 
 %xh<%= t('describe.details_available') %>%xn <%= details %>

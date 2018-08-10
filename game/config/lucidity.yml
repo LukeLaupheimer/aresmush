@@ -8,7 +8,7 @@ lucidity:
     starting: 5000
   costs:
     describe_own_room: 500
-    describe_other_room: 1500
+    describe_other_room: 2500
     rename_own_room: 500
     build_room_base: 1500
     sympathetic_connection: 5000
@@ -20,3 +20,5 @@ lucidity:
   starting_tokens:
     sympathy: 3
     bridge: 3
+  words:
+    illusion_start: 1500
