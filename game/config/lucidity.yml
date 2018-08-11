@@ -17,6 +17,7 @@ lucidity:
     bridge_toll: 50
     details_home: 500
     details_other: 1000
+    create_intradreamscape_exit: 1000
   starting_tokens:
     sympathy: 3
     bridge: 3

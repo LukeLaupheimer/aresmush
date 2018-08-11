@@ -24,6 +24,7 @@ en:
       illusion_not_yours: "This illusion does not belong to you!"
       illusion_evaporation_message_set: "The evaporation message has been set!"
       illusion_title_set: "The title has been set!"
+      different_area: "These rooms belong to two different dreamscapes"
       start_room:
         name: "An unending void"
         description: "Before the beginning there was nothing. No night or day, no animals, no people, no ideas, nothing."
