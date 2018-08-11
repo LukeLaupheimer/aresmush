@@ -10,8 +10,9 @@ Illusions are how players can superimpose their dream logic in another person's 
 
 ## Commands
 
-illusion/impose <new description> -- Set the imposition description
-illusion/evaporation <message>    -- Set the evaporation message
+`illusion/impose <new description>` -- Set the imposition description
+`illusion/evaporation <message>`    -- Set the evaporation message
+`illusion/title <title>`            -- Set the illusory title of the room
 
 ## Acceptable Use
 
