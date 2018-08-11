@@ -36,7 +36,7 @@
 
 <%= "%xg#{t('describe.bridges_title')}%xn%r" if exits.select(&:bridge).count > 0 -%>
 <% exits.select(&:bridge).each_with_index do |e, i| %>
-<%= "%xn%xh#{left(exit_name(e), 5)} %xn#{left(exit_destination(e), 30)} %xy#{e.toll}" %>
+<%= "%xn%xh#{left(exit_name(e), 5)} %xn#{left(exit_destination(e), 30)} %xy#{e.toll(enactor)}" %>
 <% end %>
 <% if exits.count == 0 %>No way out!<% end %>
 <% if is_foyer %>

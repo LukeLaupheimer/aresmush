@@ -51,10 +51,10 @@ module AresMUSH
         case cmd.switch
         when "impose"
           return IllusionImposeCmd
-        when "evaporation"
+        when "evaporate"
           return IllusionEvaporateCmd
-        when "veto"
-          return IllusionVetoCmd
+        when "title"
+          return IllusionTitleCmd
         end
       end
       nil

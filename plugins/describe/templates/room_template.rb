@@ -3,7 +3,7 @@ module AresMUSH
     # Template for a room.
     class RoomTemplate < ErbTemplateRenderer
              
-      attr_accessor :room
+      attr_accessor :room, :enactor
                      
       def initialize(room, enactor)
         @room = room

@@ -27,8 +27,11 @@ module AresMUSH
           return
         end
 
-        enactor.expend(exit.toll) do
-          Character.find_one_by_name(exit.dest.room_owner).award(exit.toll, t('lucidity.award_reasons.toll'))
+        toll = exit.toll(enactor)
+
+        enactor.expend(toll) do
+          char = Character.find_one_by_name(exit.dest.room_owner)
+          char.award(toll, t('lucidity.award_reasons.toll')) if exit.dest.room_owner != enactor.id && char
           Rooms.move_to(client, enactor, exit.dest, exit.name)
         end
       end
