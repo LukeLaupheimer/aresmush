@@ -9,6 +9,7 @@ module AresMUSH
         scene = room.scene
 
         return if scene.nil?
+        return if scene.participants.count < 2
 
         uwc = event.pose.unique_word_count
 
