@@ -25,8 +25,9 @@ module AresMUSH
         char.save
 
         client = char.client
-
-        Channels.join_channel("Collective Unconscious", client, char, "col")
+        chan = Channel.find_one_with_partial_match("Collective Unconscious")
+        
+        Channels.join_channel(chan, char, "col")
 
         Global.logger.info("Grabbing client")
         return if client.nil?
