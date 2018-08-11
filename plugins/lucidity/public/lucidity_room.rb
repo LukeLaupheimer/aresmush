@@ -6,6 +6,7 @@ module AresMUSH
     attribute :illusion_description
     attribute :illusion_words_remaining, :type => DataType::Integer, :default => 0
     attribute :illusion_evaporation_message
+    attribute :illusion_title
 
     def describe_cost(character)
       if self.owned_by?(character)

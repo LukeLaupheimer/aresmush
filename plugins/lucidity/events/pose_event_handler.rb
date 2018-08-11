@@ -22,9 +22,11 @@ module AresMUSH
 
           if room.illusion_words_remaining <= 0
 
-            room.emit "Okay.."
             room.illusion_words_remaining = 0
-
+            room.illusion_owner_id = nil
+            room.illusion_title = nil
+            room.illusion_evaporation_message = nil
+            room.illusion_description = nil
             room.emit room.illusion_evaporation_message
           end
 

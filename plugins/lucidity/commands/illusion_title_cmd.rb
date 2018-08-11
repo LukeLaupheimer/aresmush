@@ -19,7 +19,7 @@
       end
 
       def handle
-        room.name = title
+        room.illusion_title = title
         room.save
         enactor.client.emit_success t('lucidity.illusion_title_set')
       end

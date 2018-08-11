@@ -77,7 +77,10 @@ module AresMUSH
         @room.exits.select { |e| !e.name.is_integer? }.sort_by { |e| e.name }
       end
       
-     
+      def title
+        @room.illusion_present? ? @room.illusion_title : @room.name
+      end
+
       def foyer_status(e, i)
         chars = e.dest.characters
         if (!e.lock_keys.empty?)
