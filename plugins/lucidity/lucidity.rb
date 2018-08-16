@@ -17,6 +17,8 @@ module AresMUSH
         return CronEventHandler
       when "RoleChangedEvent"
         return RoleChangedEventHandler
+      when "CharConnectedEvent"
+        return CharConnectedEventHandler
       end
       nil
     end
@@ -60,8 +62,6 @@ module AresMUSH
         case cmd.switch
         when "increase"
           return BanIncreaseCmd
-        when "forgive"
-          return BanForgiveCmd
         end
       end
       nil
