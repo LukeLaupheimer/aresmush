@@ -10,7 +10,7 @@ module AresMUSH
     collection :trespassings, "AresMUSH::Ban", :trespasser
 
     def trespassing_resistance_from(char)
-      trespassing_for(char).strength || 0
+      trespassing_from(char).try(:strength) || 0
     end
 
     def trespassing_for(char)

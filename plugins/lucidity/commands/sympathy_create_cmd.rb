@@ -9,7 +9,7 @@ module AresMUSH
       def parse_args
         @target = cmd.args
         @char = Character.find_one_by_name(target)
-        @required_lucidity = Global.read_config("lucidity", "costs", "sympathetic_connection") * (char.sympathies.count + enactor.sympathies.count + 1)
+        @required_lucidity = Global.read_config("lucidity", "costs", "sympathetic_connection") * (char.sympathies.count + enactor.sympathies.count + 1) * (char.trespassing_resistance_from(enactor) + 1)
       end
       
 

@@ -37,7 +37,7 @@ module AresMUSH
       end
       
       def handle
-        required_lucidity = Global.read_config("lucidity", "costs", "erect_bridge") * (enactor.bridge_tokens > 0 ?  0 : char.room.barrier + enactor.room.barrier)
+        required_lucidity = Global.read_config("lucidity", "costs", "erect_bridge") * (enactor.bridge_tokens > 0 ?  0 : char.room.barrier + enactor.room.barrier) * (char.trespassing_resistance_from(enactor) + 1)
 
         enactor.expend(required_lucidity) do
           exits = (enactor.room.exits.collect(&:name) + char.room.exits.collect(&:name)).uniq

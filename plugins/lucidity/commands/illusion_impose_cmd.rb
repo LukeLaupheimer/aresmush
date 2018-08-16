@@ -7,9 +7,9 @@ module AresMUSH
 
       def parse_args
         @illusion_description = cmd.args
-        @required_lucidity = Global.read_config('lucidity', 'costs', 'describe_other_room') * (enactor.room.barrier + 1)
         @room = enactor.room
         @owner = Character.find_one_by_name(room.room_owner)
+        @required_lucidity = Global.read_config('lucidity', 'costs', 'describe_other_room') * (enactor.room.barrier + 1) * (owner.trespassing_resistance_from(enactor) + 1)
       end
 
       def check_you_are_ic
