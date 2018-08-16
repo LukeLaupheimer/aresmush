@@ -29,7 +29,8 @@ module AresMUSH
           :erect_bridge => "the total barriers of both rooms",
           :bridge_toll => "the barrier of the room being entered",
           :describe_other_room => "(the barrier of the room being described + 1)",
-          :details_other => "the barrier of the room being detailed"
+          :details_other => "the barrier of the room being detailed",
+          :ban_trespasser => "(the current ban's level + 1)"
         }
       end
 

@@ -56,6 +56,13 @@ module AresMUSH
         when "title"
           return IllusionTitleCmd
         end
+      when "ban"
+        case cmd.switch
+        when "increase"
+          return BanIncreaseCmd
+        when "forgive"
+          return BanForgiveCmd
+        end
       end
       nil
     end

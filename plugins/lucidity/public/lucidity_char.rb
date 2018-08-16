@@ -6,6 +6,21 @@ module AresMUSH
     collection :senders, "AresMUSH::Sympathy", :sender
     collection :receivers, "AresMUSH::Sympathy", :receiver
 
+    collection :trespassers, "AresMUSH::Ban", :enforcer
+    collection :trespassings, "AresMUSH::Ban", :trespasser
+
+    def trespassing_resistance_from(char)
+      trespassing_for(char).strength || 0
+    end
+
+    def trespassing_for(char)
+      tresspassings.select { |t| t.trespasser.id == self.id }.first
+    end
+
+    def trespassing_from(char)
+      trespassers.select { |t| t.trespasser.id == char.id }.first
+    end
+
     def describe_cost(character)
       Global.read_config("lucidity", "costs", "describe_self")
     end

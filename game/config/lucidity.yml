@@ -18,6 +18,7 @@ lucidity:
     details_home: 500
     details_other: 1000
     create_intradreamscape_exit: 1000
+    ban_trespasser: 500
   starting_tokens:
     sympathy: 3
     bridge: 3
