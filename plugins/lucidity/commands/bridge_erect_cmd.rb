@@ -12,6 +12,10 @@ module AresMUSH
         @sympathetic_connection = enactor.sympathetic_connection_to(char)
       end
       
+      def check_formatted_correctly
+        t('dispatcher.invalid_syntax', :cmd => "barriers") if target.nil? || target.strip.length == ""
+      end
+
       def check_target_exists_and_is_online
         t('db.no_char_online_found', :name => target) if char.nil? || char.client.nil?
       end
@@ -30,6 +34,7 @@ module AresMUSH
       end
 
       def check_no_bridge
+        return if char.nil?
         t('lucidity.bridge_already_erected', :dest => char.room.name) if enactor.room.exits.any? { |e| e.dest_id == char.room.id }
       end
 
